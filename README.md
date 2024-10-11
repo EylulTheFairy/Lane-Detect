@@ -20,5 +20,22 @@ Output of the road, with trailing boxes and the polynomials
     source = np.float32([[1000,450],[1000, 720],[75,720],[200, 450]])
     destination = np.float32([[img_size[0], 0],
       [img_size[0]-offset, img_size[1]], [offset, img_size[1]],[0, 0]])
-``
+``  
 2. 
+
+## Issues:  
+  
+1. When the algorithm can't find a big chunk of the road from the bottom of the screen towards the top, it will start taking in anythi it can find (eg. the logo on our car) as a road input and totally miss the part of the lane that is present. This issue can be temporarily eliminated if such obstacles are removed such as removing the logo of masking out that part of the video but this issue will reoccur on a more difficult terrain.
+
+Output of the road, grayscale with the polynomials on
+![Output of the road , grayscale with the polynomials on](Output/4.png)
+Output of the road, with trailing boxes and the polynomials
+![Output of the road, with trailing boxes and the polynomials](Output/3.png)
+
+
+2. 
+While the program can detect turns and even their curve, it will merge both the lines together since at least one of them not be visible:
+Output of the road, grayscale with the polynomials on
+![Output of the road , grayscale with the polynomials on](Output/5.png)
+Output of the road, with trailing boxes and the polynomials
+![Output of the road, with trailing boxes and the polynomials](Output/6.png)

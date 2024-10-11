@@ -1,5 +1,5 @@
 # Lane-Detect
-My project for Teknofest Autonomous Taxi competition 2024.
+My project for Teknofest Autonomous Taxi competition 2024 with the team IKU-Asimov.
 
 I initially used Google Collab to write this code. You can reach that code here: https://colab.research.google.com/drive/1mVd6w7T0-bwkjXf7CXUuGbDKKIp2vwCp?usp=sharing
 

@@ -20,8 +20,22 @@ Output of the road, with trailing boxes and the polynomials
     source = np.float32([[1000,450],[1000, 720],[75,720],[200, 450]])
     destination = np.float32([[img_size[0], 0],
       [img_size[0]-offset, img_size[1]], [offset, img_size[1]],[0, 0]])
-``  
-2. 
+   ```
+2. We use a mixture of our new input and the previous ploynomial to determine the final polynomial. This weight can be tweaked.
+   ```
+    weight = 0.7
+
+     try:
+       new_left_poly = np.polyfit(lefty, leftx, deg=2)
+       if prev_left_poly is not None:
+         leftPoly = weight * new_left_poly + (1 - weight) * prev_left_poly
+       else:
+         leftPoly = new_left_poly
+     except TypeError as e:
+       print(f"Polynomial fitting result is empty(LEFT), using previous valid polynomials")
+       leftPoly = prev_left_poly
+   ```
+
 
 ## Issues:  
   

@@ -3,9 +3,13 @@ My project for Teknofest Autonomous Taxi competition 2024.
 
 I initially used Google Collab to write this code. You can reach that code here: https://colab.research.google.com/drive/1mVd6w7T0-bwkjXf7CXUuGbDKKIp2vwCp?usp=sharing
 
-See this link for the road: https://drive.google.com/file/d/1v84yvYlFoX2NNgreq4MEvYnPJkxO_fZe/view?usp=sharing
+See this link for the video: https://drive.google.com/file/d/1v84yvYlFoX2NNgreq4MEvYnPJkxO_fZe/view?usp=sharing
 
 File paths are of my own Google Drive. Relevant pickle files and video can be found in this repo or use your own material. You might have to make tweaks if you decide to use your own video.
+
+You can see the tracks we are working with here  
+<img src="https://github.com/EylulTheFairy/Lane-Detect/blob/main/TracksIRL.png" width="425">
+![Output of the road, with trailing boxes and the polynomials](Tracks.png)
 
 ## Some outputs:
 Output of the road, grayscale with the polynomials on
@@ -53,3 +57,6 @@ Output of the road, grayscale with the polynomials on
 ![Output of the road , grayscale with the polynomials on](Output/5.png)
 Output of the road, with trailing boxes and the polynomials
 ![Output of the road, with trailing boxes and the polynomials](Output/6.png)
+
+## Possible Improvements:
+1. Using only one previous polynomial can cause our algorithm be confused much more quickly. If we use multiple previous polynomials, we can reduce the amount of deviation from our target.
